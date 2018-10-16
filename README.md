@@ -4,7 +4,7 @@ Chat Station is chatting app where each user can create a chat room and chat wit
 Users can use their Google accounts to log in and log out of Chat Station.
 
 
-# issues
+# Issues
 Chat Station log in and log out don't work on Netify demo. To log in and log out; clone or download Chat Station from Github, and run on local server.
 
 
