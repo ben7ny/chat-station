@@ -53,7 +53,7 @@ getNameChange(e) {
     return (
       <div className='roomListPart'>
         <div>
-           <h1 className='app-name'>Converster</h1>
+           <h1 className='app-name'>Chat Station</h1>
 
          </div>
           <div className="myRoomList"> {this.state.rooms.map((room, index)=>

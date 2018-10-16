@@ -34,7 +34,7 @@ signOut(e) {
 render(){
    return(
      <div className='userPart'>
-        <h1>Hello, {this.props.currentUser} Welcome to Converster!</h1>
+        <h1>Hello, {this.props.currentUser} Welcome to Chat Station!</h1>
         <button className='LogIn' onClick={this.signIn.bind(this)}>Login With Google</button>
         <button className='logOut' onClick={this.signOut.bind(this)}>Log out</button>
      </div>
