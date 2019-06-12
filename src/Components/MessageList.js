@@ -1,26 +1,26 @@
-import React, { Component } from 'react';
-import Moment from 'react-moment';
+import React, { Component } from "react";
+import Moment from "react-moment";
 
-
-class MessageList extends Component{
-  constructor(props){
+class MessageList extends Component {
+  constructor(props) {
     super(props);
     this.state = {
-      messages: [{
-        username: '',
-        content: '',
-        sentAt: '',
-        roomId: ''
-      }],
+      messages: [
+        {
+          username: "",
+          content: "",
+          sentAt: "",
+          roomId: ""
+        }
+      ],
       activeMessages: [],
-      content: ''
+      content: ""
     };
 
-    this.messageRef = this.props.firebase.database().ref('messages');
+    this.messageRef = this.props.firebase.database().ref("messages");
   }
 
-
-  createNewMessage(e){
+  createNewMessage(e) {
     e.preventDefault();
     const content = this.state.content;
     this.messageRef.push({
@@ -29,65 +29,72 @@ class MessageList extends Component{
       username: this.props.currentUser,
       sentAt: this.props.firebase.database.ServerValue.TIMESTAMP
     });
-    this.setState({ content: ''});
+    this.setState({ content: "" });
   }
 
-
-  getMessageChange(e){
-
-    this.setState({ content:  e.target.value });
-
+  getMessageChange(e) {
+    this.setState({ content: e.target.value });
   }
 
   updateActiveMessageList(activeRoom, message) {
-    if(!activeRoom) {return};
-    this.setState({activeMessages: this.state.messages.filter(message => message.roomId === activeRoom.key)})
+    if (!activeRoom) {
+      return;
+    }
+    this.setState({
+      activeMessages: this.state.messages.filter(
+        message => message.roomId === activeRoom.key
+      )
+    });
   }
-
 
   componentWillReceiveProps(nextProps) {
     this.updateActiveMessageList(nextProps.activeRoom);
   }
 
   componentDidMount(activeRoom) {
-    this.messageRef.on('child_added', snapshot => {
+    this.messageRef.on("child_added", snapshot => {
       const message = snapshot.val();
       message.key = snapshot.key;
-      this.setState({ messages: this.state.messages.concat( message ), activeMessages: this.state.activeMessages.concat( message ) })
+      this.setState({
+        messages: this.state.messages.concat(message),
+        activeMessages: this.state.activeMessages.concat(message)
+      });
     });
-
   }
 
-
-  render(){
-    return(
+  render() {
+    return (
       <div className="messageParts">
         <h2>Active Room:{this.props.activeRoom.name}</h2>
-        <div className="messageList">{this.state.activeMessages.map((message, index)=>
-          <ul  key={index}>
-            <li><h3>User:{message.username}</h3></li>
-            <li><Moment format='lll'>{message.sentAt}</Moment></li>
-            <li>{message.content}</li>
-          </ul>
-
-        )}
-
+        <div className="messageList">
+          {this.state.activeMessages.map((message, index) => (
+            <ul key={index}>
+              <li>
+                <h3>User:{message.username}</h3>
+              </li>
+              <li>
+                <Moment format="lll">{message.sentAt}</Moment>
+              </li>
+              <li>{message.content}</li>
+            </ul>
+          ))}
         </div>
         <section className="messageForm">
-          <form className="newMessage" onSubmit={(e) => this.createNewMessage(e)}>
+          <form className="newMessage" onSubmit={e => this.createNewMessage(e)}>
             <label>
-              <input type="text" placeholder="Write Your Message" value={this.state.content} onChange={(e)=>this.getMessageChange(e)}/>
+              <input
+                type="text"
+                placeholder="Write Your Message"
+                value={this.state.content}
+                onChange={e => this.getMessageChange(e)}
+              />
             </label>
-            <input type="submit" value="Send Message"/>
+            <input type="submit" value="Send Message" />
           </form>
         </section>
       </div>
-
     );
   }
 }
-
-
-
 
 export default MessageList;
