@@ -23,13 +23,18 @@ class MessageList extends Component {
   createNewMessage(e) {
     e.preventDefault();
     const content = this.state.content;
-    this.messageRef.push({
-      content: content,
-      roomId: this.props.activeRoom.key,
-      username: this.props.currentUser,
-      sentAt: this.props.firebase.database.ServerValue.TIMESTAMP
-    });
-    this.setState({ content: "" });
+    console.log(content);
+    if (content === "") {
+      console.log("you need to type something");
+    } else {
+      this.messageRef.push({
+        content: content,
+        roomId: this.props.activeRoom.key,
+        username: this.props.currentUser,
+        sentAt: this.props.firebase.database.ServerValue.TIMESTAMP
+      });
+      this.setState({ content: "" });
+    }
   }
 
   getMessageChange(e) {

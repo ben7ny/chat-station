@@ -7,7 +7,8 @@ class RoomList extends Component {
 
     this.state = {
       rooms: [],
-      newRoomName: ""
+      newRoomName: "",
+      validationMessage: ""
     };
 
     this.roomsRef = this.props.firebase.database().ref("rooms");
@@ -30,18 +31,19 @@ class RoomList extends Component {
   createRoom(e) {
     e.preventDefault();
     const newRoomName = this.state.newRoomName;
-    // const rooms = this.state.rooms[1].name;
     const rooms = this.state.rooms.find(room => room.name === newRoomName);
     const matchedRoom = rooms !== undefined ? rooms.name : null;
-    // console.log(newRoomName);
     console.log(matchedRoom);
     if (newRoomName === "" || matchedRoom === newRoomName) {
       console.log("The name already exist");
+      this.setState({
+        validationMessage: "The name already exist or Empty Space"
+      });
     } else {
       this.roomsRef.push({
         name: newRoomName
       });
-      this.setState({ newRoomName: "" });
+      this.setState({ newRoomName: "", validationMessage: "" });
     }
   }
 
@@ -58,6 +60,9 @@ class RoomList extends Component {
       <div className="roomListPart">
         <div>
           <h1 className="app-name">Chat Station</h1>
+          {this.state.validationMessage !== "" && (
+            <h4>{this.state.validationMessage}</h4>
+          )}
         </div>
         <div className="myRoomList">
           {" "}
