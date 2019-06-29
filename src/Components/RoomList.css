@@ -1,0 +1,143 @@
+.myRoomList ul li {
+  list-style-type: none;
+  line-height: 1rem;
+  padding-bottom: 1rem;
+  padding-left: 1.6rem;
+  padding-top: 2rem;
+  cursor: pointer;
+}
+
+.myRoomList ul li button {
+  height: 20px;
+  background-color: #61151d;
+  color: white;
+  border-radius: 4px;
+}
+
+.myRoomList ul li button,
+.myRoomList ul li h2 {
+  cursor: pointer;
+}
+
+/* .container.d-none.d-md-block ul {
+  border-bottom: 2px solid white;
+  border-top: 2px solid white;
+  padding-left: 0;
+} */
+
+.myRoomList ul {
+  border-top: 2px solid white;
+  padding-left: 0;
+}
+
+.roomSet {
+  display: grid;
+  grid-template-columns: 75% 25%;
+  align-items: center;
+}
+
+/* h1.app-name {
+  padding-bottom: 1rem;
+  padding-left: 1rem;
+} */
+
+.myRoomList {
+  padding-bottom: 10rem;
+}
+
+.NewRoomCreated {
+  /* width: 100%;
+  padding-left: 1rem; */
+  padding-top: 100px;
+  margin-top: 0;
+  padding-left: 1.4rem;
+  display: grid;
+  grid-template-columns: 75% 25%;
+  align-items: end;
+}
+
+.NewRoomCreated label {
+  font-size: 1.5rem;
+}
+
+/* .NewRoomCreated input[type="text"] {
+  width: 80%;
+  margin-top: 0.7rem;
+  height: 30px;
+  box-sizing: border-box;
+  border: 4px solid white;
+  padding-left: 4px;
+  font-size: 1.2rem;
+  border-radius: 10px;
+}
+
+.NewRoomCreated input[type="submit"] {
+  width: 20%;
+  margin-top: 0.7rem;
+  height: 30px;
+  cursor: pointer;
+  background-color: darkgray;
+  border-radius: 10px;
+} */
+
+.NewRoomCreated input[type="text"] {
+  width: 95%;
+
+  height: 40px;
+  box-sizing: border-box;
+  border: 4px solid #151a57;
+  /* padding-left: 4px;
+  margin-left: 2rem;
+  margin-top: 3rem; */
+  font-size: 1.2rem;
+  border-radius: 10px;
+}
+
+.NewRoomCreated input[type="submit"] {
+  width: 80%;
+  margin-left: 0.2rem;
+  height: 35px;
+  cursor: pointer;
+  margin-bottom: 7px;
+  margin-right: 2.5rem;
+  box-sizing: border-box;
+  background-color: #0095d5;
+  color: white;
+  border-radius: 10px;
+}
+
+.dropdown-menu {
+  background-color: #151a57;
+  width: 28rem;
+  padding-bottom: 10rem;
+  padding-top: 0rem;
+}
+
+/* .dropdown-menu.show {
+  background-color: #151a57;
+  width: 200px;
+} */
+
+.roomsInputTitle {
+  color: white;
+  font-size: 14px;
+  padding-left: 1.6rem;
+  padding-top: 8px;
+}
+
+/* p.roomsInputTitle {
+  color: white;
+  font-size: 14px;
+  padding-left: 1.6rem;
+  padding-top: 8px;
+  padding-bottom: 0;
+}
+
+form.NewRoomCreated {
+  margin-top: 0px;
+} */
+
+button.btn.dropdown-toggle {
+  margin-left: 1.6rem;
+  width: 75px;
+}

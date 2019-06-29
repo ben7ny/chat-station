@@ -1,0 +1,40 @@
+/* .userBar {
+  margin-top: 0;
+  padding: 0;
+  background-color: #151a57;
+  color: white;
+}
+
+.userBar > p {
+  text-align: right;
+  margin-right: 20px;
+} */
+
+/* .loggs {
+} */
+/* .logIn {
+  padding-left: 10px;
+}
+
+.logOut {
+  padding-left: 10px;
+} */
+
+p {
+  padding-right: 2rem;
+  color: #151a57;
+}
+
+p.text-right.greeting {
+  padding-top: 0.7rem;
+}
+
+p.text-right span {
+  color: #0095d5;
+  font-weight: 800;
+  padding-left: 2rem;
+}
+
+p.text-right.guest {
+  padding-top: 1.5rem;
+}

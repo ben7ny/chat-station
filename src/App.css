@@ -1,32 +1,77 @@
 /* .App {
-  text-align: center;
-}
-
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-}
-
-.App-header {
-  background-color: #282c34;
   min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  grid-template-rows: 20% 80%;
 }
 
-.App-link {
-  color: #61dafb;
+.dashboard {
+  margin-top: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: 25% auto;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.roomsNmessages {
+  display: grid;
+  grid-template-columns: 25% auto;
+  min-height: 100vh;
+}
+
+.logo {
+  background-color: red;
+  max-width: 150px;
+}
+
+.brand {
+  margin-top: 4px;
+  max-width: 100%;
+  display: block;
+  height: auto;
+  background-color: white;
+}
+
+.rooms {
+  background-color: #151a57;
+  min-width: 250px;
 } */
+
+/* .col {
+  padding: 0;
+  margin: 0;
+  min-width: 100%;
+} */
+
+.container {
+  padding: 0;
+  margin: 0;
+  min-width: 100%;
+}
+.img {
+  padding: 1rem 1rem 1rem 1.4rem;
+  max-width: 16rem;
+}
+
+.myContainer {
+  width: 100%;
+}
+
+.col-9.myBar {
+  background-color: white;
+}
+
+.sperationLine {
+  margin-top: 112px;
+  width: 100%;
+  padding-bottom: 0.5rem;
+  background-color: #151a57;
+}
+
+div.row.myRow {
+}
+
+/* div.roomListPart {
+  color: blueviolet;
+} */
+
+.row.myRow.fixed-top {
+  background-color: white;
+}

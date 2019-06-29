@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Button } from "react-bootstrap";
+import "./RoomList.css";
 
 class RoomList extends Component {
   constructor(props) {
@@ -22,7 +22,7 @@ class RoomList extends Component {
     });
     this.roomsRef.on("child_removed", snapshot => {
       const deltRoom = this.state.rooms.filter(
-        (room, i) => room.key !== snapshot.key
+        room => room.key !== snapshot.key
       );
       this.setState({ rooms: deltRoom });
     });
@@ -56,46 +56,108 @@ class RoomList extends Component {
   }
 
   render() {
+    const activeRoom = this.props.activeRoom;
+
     return (
       <div className="roomListPart">
-        <div>
-          <h1 className="app-name">Chat Station</h1>
-          {this.state.validationMessage !== "" && (
-            <h4>{this.state.validationMessage}</h4>
-          )}
+        {this.state.validationMessage !== "" && (
+          <h4 className="alert alert-primary" role="alert">
+            {this.state.validationMessage}
+          </h4>
+        )}
+        <div className="roomContianer" style={{ backgroundColor: "#151A57" }}>
+          <p className="roomsInputTitle">Add New Room</p>
+          <form className="NewRoomCreated" onSubmit={e => this.createRoom(e)}>
+            <label>
+              <input
+                type="text"
+                placeholder="New Room Name"
+                value={this.state.newRoomName}
+                onChange={e => this.getNameChange(e)}
+              />
+            </label>
+            <input type="submit" value="Add" />
+          </form>
+          <div />
+          <h2
+            style={{
+              color: "white",
+              fontSize: "24px",
+              paddingLeft: "1.6rem",
+              marginTop: "10px"
+            }}
+          >
+            Rooms
+          </h2>
+          <div className="myRoomList">
+            <div
+              className="container d-none d-md-block"
+              style={{ backgroundColor: "#151A57", minHeight: "100vh" }}
+            >
+              {this.state.rooms
+                .map(room => (
+                  <ul key={room.key}>
+                    <div className="roomSet">
+                      <li onClick={e => this.props.selectRoom(room)}>
+                        {room === activeRoom ? (
+                          <h2 style={{ color: "white" }}>{room.name}</h2>
+                        ) : (
+                          <h4 style={{ color: "#3BA9D9" }}>{room.name}</h4>
+                        )}
+                      </li>
+                      <li>
+                        <button onClick={e => this.deleteRoom(room)}>
+                          Remove
+                        </button>
+                      </li>{" "}
+                    </div>
+                  </ul>
+                ))
+                .reverse()}
+            </div>
+
+            <div
+              class="dropdown d-block d-md-none"
+              style={{ backgroundColor: "#151A57" }}
+            >
+              <button
+                class="btn dropdown-toggle"
+                type="button"
+                id="dropdownMenuButton"
+                data-toggle="dropdown"
+                aria-haspopup="true"
+                aria-expanded="false"
+              >
+                Pick Room
+              </button>
+              <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <div>
+                  {this.state.rooms
+                    .map(room => (
+                      <ul key={room.key}>
+                        {" "}
+                        <div className="roomSet">
+                          <li onClick={e => this.props.selectRoom(room)}>
+                            {room === activeRoom ? (
+                              <h2 style={{ color: "white" }}>{room.name}</h2>
+                            ) : (
+                              <h4 style={{ color: "#3BA9D9" }}>{room.name}</h4>
+                            )}
+                          </li>
+                          <li>
+                            <button onClick={e => this.deleteRoom(room)}>
+                              Remove
+                            </button>
+                          </li>
+                        </div>
+                      </ul>
+                    ))
+                    .reverse()}
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-        <div className="myRoomList">
-          {" "}
-          {this.state.rooms.map((room, index) => (
-            <ul key={room.key}>
-              <li onClick={e => this.props.selectRoom(room)}>
-                <h2>{room.name}</h2>
-              </li>
-              <li>
-                <Button
-                  bsStyle="danger"
-                  bsSize="small"
-                  onClick={e => this.deleteRoom(room)}
-                >
-                  Remove Room
-                </Button>
-              </li>
-            </ul>
-          ))}
-        </div>
-        <form className="NewRoomCreated" onSubmit={e => this.createRoom(e)}>
-          <label>
-            {" "}
-            Enter New Room Name:
-            <input
-              type="text"
-              placeholder="New Room Name"
-              value={this.state.newRoomName}
-              onChange={e => this.getNameChange(e)}
-            />
-          </label>
-          <input type="submit" value="Create Room" />
-        </form>
       </div>
     );
   }

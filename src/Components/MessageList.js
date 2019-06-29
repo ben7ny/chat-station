@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import Moment from "react-moment";
+import "./MessageList.css";
 
 class MessageList extends Component {
   constructor(props) {
@@ -69,8 +70,8 @@ class MessageList extends Component {
 
   render() {
     return (
-      <div className="messageParts">
-        <h2>Active Room:{this.props.activeRoom.name}</h2>
+      <div className="roomsNmessages">
+        <h2>{this.props.activeRoom.name} Room</h2>
         <div className="messageList">
           {this.state.activeMessages.map((message, index) => (
             <ul key={index}>
@@ -84,19 +85,19 @@ class MessageList extends Component {
             </ul>
           ))}
         </div>
-        <section className="messageForm">
+        <div className="fixed-bottom messageForm">
           <form className="newMessage" onSubmit={e => this.createNewMessage(e)}>
             <label>
               <input
                 type="text"
-                placeholder="Write Your Message"
+                placeholder="Write your message here..."
                 value={this.state.content}
                 onChange={e => this.getMessageChange(e)}
               />
             </label>
-            <input type="submit" value="Send Message" />
+            <input type="submit" value="Send" />
           </form>
-        </section>
+        </div>
       </div>
     );
   }
