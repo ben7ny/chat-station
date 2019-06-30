@@ -65,13 +65,14 @@ class App extends Component {
               />
             </div>
           </div>
+
           <div className="col-sm-12 col-md-8">
             <div className={showMessages}>
               <div />
               <MessageList
                 firebase={firebase}
                 activeRoom={this.state.activeRoom}
-                currentUser={currentUser}
+                currentUser={currentUser || "guest"}
               />
             </div>
           </div>

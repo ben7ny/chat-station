@@ -42,15 +42,18 @@
 } */
 
 .myRoomList {
-  padding-bottom: 10rem;
+  padding-bottom: 4rem;
 }
 
+.roomListPart {
+  padding-top: 117px;
+}
 .NewRoomCreated {
   /* width: 100%;
   padding-left: 1rem; */
-  padding-top: 100px;
+
   margin-top: 0;
-  padding-left: 1.4rem;
+  padding-left: 1.1rem;
   display: grid;
   grid-template-columns: 75% 25%;
   align-items: end;
@@ -108,9 +111,9 @@
 
 .dropdown-menu {
   background-color: #151a57;
-  width: 28rem;
+  width: 40rem;
   padding-bottom: 10rem;
-  padding-top: 0rem;
+  padding-top: 108px;
 }
 
 /* .dropdown-menu.show {
@@ -122,7 +125,7 @@
   color: white;
   font-size: 14px;
   padding-left: 1.6rem;
-  padding-top: 8px;
+  /* margin-top: 160; */
 }
 
 /* p.roomsInputTitle {
@@ -140,4 +143,14 @@ form.NewRoomCreated {
 button.btn.dropdown-toggle {
   margin-left: 1.6rem;
   width: 75px;
+}
+
+/* .alert.alert-primary {
+  margin-top: 160;
+} */
+
+@media (max-width: 575.98px) {
+  .roomsInputTitle {
+    margin-top: 10px;
+  }
 }

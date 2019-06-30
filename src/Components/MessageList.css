@@ -7,6 +7,9 @@
   list-style-type: none;
   line-height: 2rem;
 }
+.messageList ul {
+  margin-top: 4rem;
+}
 
 .messageList ul:nth-child(even) {
   background-color: #9ec8e3;
@@ -55,11 +58,10 @@
 
 .messageForm input[type="submit"] {
   width: 100%;
-  margin-left: 0.2rem;
+
   height: 40px;
   cursor: pointer;
   margin-bottom: 5px;
-
   box-sizing: border-box;
   background-color: #0095d5;
   color: white;
@@ -67,5 +69,41 @@
 }
 
 .roomsNmessages {
-  padding-top: 135px;
+  padding-top: 115px;
 }
+
+.roomsNmessages > h2 {
+  color: white;
+  background-color: #151a57;
+  /* margin-left: -6px; */
+  width: 160px;
+  height: 30px;
+  padding: 4px;
+  padding-top: 2px;
+
+  position: fixed;
+  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+
+@media (max-width: 767.98px) {
+  .roomsNmessages {
+    position: relative;
+    padding-top: 1px;
+    margin-top: 1px;
+  }
+
+  .roomsNmessages > h2 {
+    align-self: start;
+    position: relative;
+    margin-top: -2.2px;
+    /* padding-bottom: 8px; */
+  }
+}
+
+/* @media (min-width: 576px) and (max-width: 767.98px) {
+  .roomsNmessages {
+    padding-bottom: 10rem;
+    margin-bottom: 10rem;
+  }
+} */

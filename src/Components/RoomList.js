@@ -66,7 +66,7 @@ class RoomList extends Component {
           </h4>
         )}
         <div className="roomContianer" style={{ backgroundColor: "#151A57" }}>
-          <p className="roomsInputTitle">Add New Room</p>
+          <div className="roomsInputTitle">Add New Room</div>
           <form className="NewRoomCreated" onSubmit={e => this.createRoom(e)}>
             <label>
               <input
@@ -117,11 +117,11 @@ class RoomList extends Component {
             </div>
 
             <div
-              class="dropdown d-block d-md-none"
+              className="dropdown d-block d-md-none"
               style={{ backgroundColor: "#151A57" }}
             >
               <button
-                class="btn dropdown-toggle"
+                className="btn dropdown-toggle"
                 type="button"
                 id="dropdownMenuButton"
                 data-toggle="dropdown"
@@ -130,7 +130,10 @@ class RoomList extends Component {
               >
                 Pick Room
               </button>
-              <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+              <div
+                className="dropdown-menu"
+                aria-labelledby="dropdownMenuButton"
+              >
                 <div>
                   {this.state.rooms
                     .map(room => (
