@@ -7,11 +7,28 @@
   cursor: pointer;
 }
 
+.myRoomList ul {
+  border-top: 2px solid white;
+  padding-left: 0;
+}
+
+.roomSet {
+  display: grid;
+  grid-template-columns: 70% 30%;
+  align-items: center;
+}
+
 .myRoomList ul li button {
   height: 20px;
   background-color: #61151d;
   color: white;
+
+  font-size: 1rem;
   border-radius: 4px;
+  margin-left: 0;
+  /* justify-self: end; */
+  margin-left: 1rem;
+  width: 80%;
 }
 
 .myRoomList ul li button,
@@ -24,17 +41,6 @@
   border-top: 2px solid white;
   padding-left: 0;
 } */
-
-.myRoomList ul {
-  border-top: 2px solid white;
-  padding-left: 0;
-}
-
-.roomSet {
-  display: grid;
-  grid-template-columns: 75% 25%;
-  align-items: center;
-}
 
 /* h1.app-name {
   padding-bottom: 1rem;
@@ -157,5 +163,20 @@ button.btn.dropdown-toggle {
   .dropdown-menu {
     padding-bottom: 10rem;
     padding-top: 102px;
+  }
+}
+
+@media (min-width: 576px) and (max-width: 1200px) {
+  .myRoomList ul li button {
+    height: 20px;
+    background-color: #61151d;
+    color: white;
+
+    font-size: 0.8rem;
+    border-radius: 4px;
+    margin-left: 0;
+
+    margin-left: 0rem;
+    width: 80%;
   }
 }
