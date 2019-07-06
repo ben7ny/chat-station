@@ -65,12 +65,15 @@
   background-color: #151a57;
 }
 
-div.row.myRow {
+.row .col-sm-12.col-md-4 {
+  margin: 0;
+  padding: 0;
 }
 
-/* div.roomListPart {
-  color: blueviolet;
-} */
+.col-sm-12.col-md-4.rooms {
+  background-color: #151a57;
+  padding-left: 15px;
+}
 
 /* h2.d-block.d-md-none {
   color: white;

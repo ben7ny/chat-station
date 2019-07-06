@@ -43,7 +43,7 @@ class App extends Component {
       <div className="container myContainer">
         <div className="row myRow fixed-top">
           <div className="col-3 myCol ">
-            <img className="img" src={brand} />
+            <img className="img" alt="logo" src={brand} />
           </div>
           <div className="col-9  myBar">
             <User
