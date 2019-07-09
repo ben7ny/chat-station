@@ -76,13 +76,29 @@ class MessageList extends Component {
         <div className="messageList">
           {this.state.activeMessages.map((message, index) => (
             <ul key={index}>
-              <li>
-                <h3>User:{message.username}</h3>
-              </li>
-              <li>
-                <Moment format="lll">{message.sentAt}</Moment>
-              </li>
-              <li>{message.content}</li>
+              <div className="textBubble">
+                <div className="textBubbleUserDate">
+                  <li className="bubbleUser">
+                    <h5>{message.username}</h5>
+                  </li>
+                  <li className="bubbleDate">
+                    <Moment
+                      format="lll"
+                      style={{
+                        fontSize: "12px",
+                        fontWeight: "bold"
+                      }}
+                    >
+                      <h5>{message.sentAt}</h5>
+                    </Moment>
+                  </li>
+                </div>
+                <div className="textBubbleContent">
+                  <h3>
+                    <li>{message.content}</li>
+                  </h3>
+                </div>
+              </div>
             </ul>
           ))}
         </div>

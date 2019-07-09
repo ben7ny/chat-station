@@ -26,11 +26,11 @@
   margin-bottom: 10rem;
 }
 
-.messageList ul {
+/* .messageList ul {
   display: grid;
   grid-template-columns: 1fr 1fr;
   align-items: start;
-}
+} */
 
 .newMessage {
   display: grid;
@@ -87,6 +87,52 @@
   position: fixed;
   border-bottom-right-radius: 10px;
   border-bottom-left-radius: 10px;
+}
+
+.textBubble {
+  margin-left: -40px;
+  display: grid;
+  grid-template-rows: 24px auto;
+}
+
+.textBubbleUserDate {
+  border-bottom: solid 1px white;
+}
+
+.textBubbleUserDate li.bubbleUser {
+  justify-self: start;
+  padding-left: 8px;
+}
+
+.textBubbleUserDate li.bubbleUser h5 {
+  font-size: 1.7rem;
+  font-weight: 800;
+  padding-top: 2px;
+}
+
+.textBubbleUserDate li.bubbleDate Moment.bubbleDateWrap h5 {
+  font-size: 1.7rem;
+  font-weight: 800;
+  padding-top: 6px;
+}
+
+.textBubbleUserDate li.bubbleDate {
+  justify-self: end;
+  padding-right: 8px;
+}
+
+.bubbleTime {
+  font-size: 4rem;
+  font-weight: 400;
+}
+
+.textBubbleUserDate {
+  display: grid;
+  grid-template-columns: 50% 50%;
+}
+
+.textBubbleContent {
+  padding: 8px;
 }
 
 @media (max-width: 767.98px) {
