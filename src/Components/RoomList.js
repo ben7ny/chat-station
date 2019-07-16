@@ -127,6 +127,11 @@ class RoomList extends Component {
                 data-toggle="dropdown"
                 aria-haspopup="true"
                 aria-expanded="false"
+                style={{
+                  color: "white",
+                  fontSize: "14px",
+                  paddingLeft: "12px"
+                }}
               >
                 Pick Room
               </button>
