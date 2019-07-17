@@ -1,46 +1,4 @@
-/* .App {
-  min-height: 100vh;
-  grid-template-rows: 20% 80%;
-}
-
-.dashboard {
-  margin-top: 0;
-  padding: 0;
-  display: grid;
-  grid-template-columns: 25% auto;
-}
-
-.roomsNmessages {
-  display: grid;
-  grid-template-columns: 25% auto;
-  min-height: 100vh;
-}
-
-.logo {
-  background-color: red;
-  max-width: 150px;
-}
-
-.brand {
-  margin-top: 4px;
-  max-width: 100%;
-  display: block;
-  height: auto;
-  background-color: white;
-}
-
-.rooms {
-  background-color: #151a57;
-  min-width: 250px;
-} */
-
-/* .col {
-  padding: 0;
-  margin: 0;
-  min-width: 100%;
-} */
-
-.container {
+/* .container {
   padding: 0;
   margin: 0;
   min-width: 100%;
@@ -75,20 +33,6 @@
   padding-left: 15px;
 }
 
-/* h2.d-block.d-md-none {
-  color: white;
-  background-color: #151a57;
-  margin-left: -6px;
-  width: 160px;
-  height: 30px;
-  padding: 4px;
-  padding-top: 2px;
-
-  position: fixed;
-  border-bottom-right-radius: 10px;
-  border-bottom-left-radius: 10px;
-} */
-
 .row.myRow.fixed-top {
   background-color: white;
 }
@@ -96,5 +40,48 @@
 @media (max-width: 575.98px) {
   .sperationLine {
     display: none;
+  }
+} */
+
+/* new style */
+
+.myContainer {
+  display: grid;
+  grid-template-rows: 35px 2px auto;
+}
+
+.sperationLine {
+  margin-top: 112px;
+  width: 100%;
+  padding-bottom: 0.5rem;
+  background-color: #151a57;
+}
+
+.myTopNav {
+  z-index: 10;
+  min-width: 100%;
+  background-color: white;
+  position: fixed;
+  display: grid;
+  grid-template-columns: 30% 70%;
+}
+
+.RoomsAndTextArea {
+  display: grid;
+  grid-template-columns: 30% 70%;
+}
+
+.img {
+  padding: 1rem 1rem 1rem 1.4rem;
+  max-width: 16rem;
+}
+
+@media (max-width: 768px) {
+  .sperationLine {
+    display: none;
+  }
+
+  .RoomsAndTextArea {
+    display: block;
   }
 }

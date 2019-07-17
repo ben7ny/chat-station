@@ -26,7 +26,7 @@
   font-size: 1rem;
   border-radius: 4px;
   margin-left: 0;
-  /* justify-self: end; */
+
   margin-left: 1rem;
   width: 80%;
 }
@@ -36,17 +36,6 @@
   cursor: pointer;
 }
 
-/* .container.d-none.d-md-block ul {
-  border-bottom: 2px solid white;
-  border-top: 2px solid white;
-  padding-left: 0;
-} */
-
-/* h1.app-name {
-  padding-bottom: 1rem;
-  padding-left: 1rem;
-} */
-
 .myRoomList {
   padding-bottom: 4rem;
 }
@@ -55,9 +44,6 @@
   padding-top: 117px;
 }
 .NewRoomCreated {
-  /* width: 100%;
-  padding-left: 1rem; */
-
   margin-top: 0;
   padding-left: 1.1rem;
   display: grid;
@@ -69,35 +55,13 @@
   font-size: 1.5rem;
 }
 
-/* .NewRoomCreated input[type="text"] {
-  width: 80%;
-  margin-top: 0.7rem;
-  height: 30px;
-  box-sizing: border-box;
-  border: 4px solid white;
-  padding-left: 4px;
-  font-size: 1.2rem;
-  border-radius: 10px;
-}
-
-.NewRoomCreated input[type="submit"] {
-  width: 20%;
-  margin-top: 0.7rem;
-  height: 30px;
-  cursor: pointer;
-  background-color: darkgray;
-  border-radius: 10px;
-} */
-
 .NewRoomCreated input[type="text"] {
   width: 95%;
 
   height: 40px;
   box-sizing: border-box;
   border: 4px solid #151a57;
-  /* padding-left: 4px;
-  margin-left: 2rem;
-  margin-top: 3rem; */
+
   font-size: 1.2rem;
   border-radius: 10px;
 }
@@ -122,38 +86,11 @@
   padding-top: 108px;
 }
 
-/* .dropdown-menu.show {
-  background-color: #151a57;
-  width: 200px;
-} */
-
 .roomsInputTitle {
   color: white;
   font-size: 14px;
   padding-left: 1.6rem;
-  /* margin-top: 160; */
 }
-
-/* p.roomsInputTitle {
-  color: white;
-  font-size: 14px;
-  padding-left: 1.6rem;
-  padding-top: 8px;
-  padding-bottom: 0;
-}
-
-form.NewRoomCreated {
-  margin-top: 0px;
-} */
-
-/* button.btn.dropdown-toggle {
-  margin-left: 1.6rem;
-  width: 75px;
-} */
-
-/* .alert.alert-primary {
-  margin-top: 160;
-} */
 
 @media (max-width: 575.98px) {
   .roomsInputTitle {
