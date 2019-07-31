@@ -140,3 +140,9 @@
     margin-top: -2.2px;
   }
 }
+
+@media (max-width: 350px) {
+  .messageList ul:last-child {
+    margin-bottom: 12rem;
+  }
+}
