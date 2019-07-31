@@ -143,6 +143,6 @@
 
 @media (max-width: 350px) {
   .messageList ul:last-child {
-    margin-bottom: 12rem;
+    margin-bottom: 14rem;
   }
 }
