@@ -3,6 +3,7 @@ import * as firebase from "firebase";
 import RoomList from "./Components/RoomList";
 import MessageList from "./Components/MessageList";
 import brand from "./images/ChatStation-logo.svg";
+import Smallbrand from "./images/ChatStation-SmallLogo.svg";
 import User from "./Components/User";
 import "./App.css";
 
@@ -42,8 +43,8 @@ class App extends Component {
     return (
       <div className="myContainer">
         <div className="myTopNav">
-          <img className="img" alt="logo" src={brand} />
-
+          <img className="img d-none d-sm-block" alt="logo" src={brand} />
+          <img className="img d-sm-none" alt="logo" src={Smallbrand} />
           <div className="loginAndOut">
             <User
               firebase={firebase}

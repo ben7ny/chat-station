@@ -71,9 +71,14 @@
   grid-template-columns: 30% 70%;
 }
 
-.img {
+.img.d-none.d-sm-block {
   padding: 1rem 1rem 1rem 1.4rem;
   max-width: 16rem;
+}
+
+.img.d-sm-none {
+  padding: 1rem 1rem 1rem 1.4rem;
+  max-width: 6rem;
 }
 
 @media (max-width: 768px) {
@@ -83,5 +88,10 @@
 
   .RoomsAndTextArea {
     display: block;
+  }
+
+  .myTopNav {
+    display: grid;
+    grid-template-columns: 20% 80%;
   }
 }
